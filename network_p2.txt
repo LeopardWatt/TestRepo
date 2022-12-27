@@ -1,1 +1,33 @@
-empty file2
+ping google.com
+traceroute google.com
+traceroute -m 255 google.com
+curl icanhazip.com
+curl -iv -A Robin google.com
+curl -L adv-it.net/kamni.jpg --output myfile.jpg
+wget adv-it.net/kamni.jpg
+-------------------------------
+dig a google.com
+dig mx google.com
+whois google.com
+whois -I google.com   !!!!!!!
+-------------------------------------------
+ssh user@ip 
+ssh user@ip -p 26
+-------------------------------------------
+systemctl ssh status
+ssh -i <cert path.pem> user@ip
+ssh -i <cert path.pem> -L 8888:127.0.0.1:80 user@ip
+scp
+rsync
+telnet
+echo
+docker 
+docker ps -a
+docker stop
+nc -vz 127.0.0.1 80
+telnet localhost 80
+nc -lp 8088 or nc 0.0.0.0 8088
+nmap google.com
+nmap -sP 10.0.0.0/24
+ps aux | grep 111
+top
