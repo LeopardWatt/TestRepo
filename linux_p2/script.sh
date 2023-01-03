@@ -1,7 +1,7 @@
 #/bin/bash
 directory=~/
-backup_dir=$directory/backup
-old_backup_dir=$directory/old_backup
+backup_dir=$directory/backup/
+old_backup_dir=$directory/old_backup/
 log_dir=$directory/log/
 date_1=`date -I`
 list=`ls $directory | grep .txt`
