@@ -21,5 +21,5 @@ done
 # delete files older than 30min
 for file in $list
 do
-find . in $list -type f -mmin +30 -delete
+find . -name "*.txt" -type f -mmin +1 -delete
 done
