@@ -1,5 +1,5 @@
-#/bin/bash
-directory=~/
+#!/bin/bash
+directory=$(pwd)
 backup_dir=$directory/backup/
 old_backup_dir=$directory/old_backup/
 log_dir=$directory/log/
@@ -10,10 +10,16 @@ err=$log_dir/err_backup.log
 
 #move files from directory older than 5 min
 mkdir -p $backup_dir $old_backup_dir $log_dir
-find $backup_dir -type f -mmin +5 -name "tar.gz" -exec mv {} $old_backup_dir \; 2>>$err 1>>$log
+find $backup_dir -type f -mmin +5 -name "*tar.gz" -exec mv {} $old_backup_dir \; 2>>$err 1>>$log
 
 #create new one
 for file in $list
 do
-tar -zcf $backup_dir$file"_"$date_1.tar.gz $file 1>>$log 2>>$err
+tar -zcvf $backup_dir$file"_"$date_1.tar.gz $file 1>>$log 2>>$err
+done
+
+# delete files older than 30min
+for file in $list
+do
+find . in $list -type f -mmin +30 -delete
 done
